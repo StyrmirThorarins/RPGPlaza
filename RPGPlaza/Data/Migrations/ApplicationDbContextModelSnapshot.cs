@@ -180,7 +180,7 @@ namespace RPGPlaza.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("RPGPlaza.Models.SWArmor", b =>
+            modelBuilder.Entity("RPGPlaza.Models.SavageWorlds.SWArmor", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -206,7 +206,7 @@ namespace RPGPlaza.Data.Migrations
                     b.ToTable("SWArmors");
                 });
 
-            modelBuilder.Entity("RPGPlaza.Models.SWArmorCustom", b =>
+            modelBuilder.Entity("RPGPlaza.Models.SavageWorlds.SWArmorCustom", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -232,7 +232,7 @@ namespace RPGPlaza.Data.Migrations
                     b.ToTable("SWArmorsCustom");
                 });
 
-            modelBuilder.Entity("RPGPlaza.Models.SWBook", b =>
+            modelBuilder.Entity("RPGPlaza.Models.SavageWorlds.SWBook", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -244,6 +244,268 @@ namespace RPGPlaza.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("SWBooks");
+                });
+
+            modelBuilder.Entity("RPGPlaza.Models.SavageWorlds.SWEdge", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("BookId");
+
+                    b.Property<int>("EdgeTypeId");
+
+                    b.Property<string>("Effects");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Requirement");
+
+                    b.Property<string>("Text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SWEdges");
+                });
+
+            modelBuilder.Entity("RPGPlaza.Models.SavageWorlds.SWEdgeCustom", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Effects");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Requirement");
+
+                    b.Property<string>("Text");
+
+                    b.Property<string>("UserID");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SWEdgesCustom");
+                });
+
+            modelBuilder.Entity("RPGPlaza.Models.SavageWorlds.SWEdgeType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SWEdgeTypes");
+                });
+
+            modelBuilder.Entity("RPGPlaza.Models.SavageWorlds.SWHindrance", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("BookId");
+
+                    b.Property<string>("Effects");
+
+                    b.Property<int>("Level");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SWHindrances");
+                });
+
+            modelBuilder.Entity("RPGPlaza.Models.SavageWorlds.SWHindranceCustom", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Effects");
+
+                    b.Property<int>("Level");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Text");
+
+                    b.Property<string>("UserID");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SWHindrancesCustom");
+                });
+
+            modelBuilder.Entity("RPGPlaza.Models.SavageWorlds.SWMundaneItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("BookId");
+
+                    b.Property<double>("Cost");
+
+                    b.Property<string>("Name");
+
+                    b.Property<int>("Type");
+
+                    b.Property<double>("Weight");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SWMundaneItems");
+                });
+
+            modelBuilder.Entity("RPGPlaza.Models.SavageWorlds.SWMundaneItemCustom", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<double>("Cost");
+
+                    b.Property<string>("Name");
+
+                    b.Property<int>("Type");
+
+                    b.Property<string>("UserID");
+
+                    b.Property<double>("Weight");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SWMundaneItemsCustom");
+                });
+
+            modelBuilder.Entity("RPGPlaza.Models.SavageWorlds.SWRace", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("BookId");
+
+                    b.Property<string>("Description");
+
+                    b.Property<string>("ModifiersJson");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SWRaces");
+                });
+
+            modelBuilder.Entity("RPGPlaza.Models.SavageWorlds.SWRaceCustom", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("BookId");
+
+                    b.Property<string>("Description");
+
+                    b.Property<string>("ModifiersJson");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("UserID");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SWRacesCustom");
+                });
+
+            modelBuilder.Entity("RPGPlaza.Models.SavageWorlds.SWSkill", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("BookId");
+
+                    b.Property<int>("LinkedAttribute");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SWSkills");
+                });
+
+            modelBuilder.Entity("RPGPlaza.Models.SavageWorlds.SWSkillCustom", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("LinkedAttribute");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Text");
+
+                    b.Property<string>("UserID");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SWSkillCustom");
+                });
+
+            modelBuilder.Entity("RPGPlaza.Models.SavageWorlds.SWWeapon", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("BookId");
+
+                    b.Property<double>("Cost");
+
+                    b.Property<string>("Damage");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Notes");
+
+                    b.Property<int>("TimePeriod");
+
+                    b.Property<int>("Type");
+
+                    b.Property<double>("Weight");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SWWeapons");
+                });
+
+            modelBuilder.Entity("RPGPlaza.Models.SavageWorlds.SWWeaponCustom", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<double>("Cost");
+
+                    b.Property<string>("Damage");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Notes");
+
+                    b.Property<int>("TimePeriod");
+
+                    b.Property<int>("Type");
+
+                    b.Property<string>("UserID");
+
+                    b.Property<double>("Weight");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SWWeaponsCustom");
                 });
 
             modelBuilder.Entity("RPGPlaza.Models.SWCharacter", b =>
@@ -300,268 +562,6 @@ namespace RPGPlaza.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("SWCharacters");
-                });
-
-            modelBuilder.Entity("RPGPlaza.Models.SWEdge", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("BookId");
-
-                    b.Property<int>("EdgeTypeId");
-
-                    b.Property<string>("Effects");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Requirement");
-
-                    b.Property<string>("Text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SWEdges");
-                });
-
-            modelBuilder.Entity("RPGPlaza.Models.SWEdgeCustom", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Effects");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Requirement");
-
-                    b.Property<string>("Text");
-
-                    b.Property<string>("UserID");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SWEdgesCustom");
-                });
-
-            modelBuilder.Entity("RPGPlaza.Models.SWEdgeType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SWEdgeTypes");
-                });
-
-            modelBuilder.Entity("RPGPlaza.Models.SWHindrance", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("BookId");
-
-                    b.Property<string>("Effects");
-
-                    b.Property<int>("Level");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SWHindrances");
-                });
-
-            modelBuilder.Entity("RPGPlaza.Models.SWHindranceCustom", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Effects");
-
-                    b.Property<int>("Level");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Text");
-
-                    b.Property<string>("UserID");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SWHindrancesCustom");
-                });
-
-            modelBuilder.Entity("RPGPlaza.Models.SWMundaneItem", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("BookId");
-
-                    b.Property<double>("Cost");
-
-                    b.Property<string>("Name");
-
-                    b.Property<int>("Type");
-
-                    b.Property<double>("Weight");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SWMundaneItems");
-                });
-
-            modelBuilder.Entity("RPGPlaza.Models.SWMundaneItemCustom", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<double>("Cost");
-
-                    b.Property<string>("Name");
-
-                    b.Property<int>("Type");
-
-                    b.Property<string>("UserID");
-
-                    b.Property<double>("Weight");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SWMundaneItemsCustom");
-                });
-
-            modelBuilder.Entity("RPGPlaza.Models.SWRace", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("BookId");
-
-                    b.Property<string>("Description");
-
-                    b.Property<string>("ModifiersJson");
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SWRaces");
-                });
-
-            modelBuilder.Entity("RPGPlaza.Models.SWRaceCustom", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("BookId");
-
-                    b.Property<string>("Description");
-
-                    b.Property<string>("ModifiersJson");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("UserID");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SWRacesCustom");
-                });
-
-            modelBuilder.Entity("RPGPlaza.Models.SWSkill", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("BookId");
-
-                    b.Property<int>("LinkedAttribute");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SWSkills");
-                });
-
-            modelBuilder.Entity("RPGPlaza.Models.SWSkillCustom", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("LinkedAttribute");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Text");
-
-                    b.Property<string>("UserID");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SWSkillCustom");
-                });
-
-            modelBuilder.Entity("RPGPlaza.Models.SWWeapon", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("BookId");
-
-                    b.Property<double>("Cost");
-
-                    b.Property<string>("Damage");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Notes");
-
-                    b.Property<int>("TimePeriod");
-
-                    b.Property<int>("Type");
-
-                    b.Property<double>("Weight");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SWWeapons");
-                });
-
-            modelBuilder.Entity("RPGPlaza.Models.SWWeaponCustom", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<double>("Cost");
-
-                    b.Property<string>("Damage");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Notes");
-
-                    b.Property<int>("TimePeriod");
-
-                    b.Property<int>("Type");
-
-                    b.Property<string>("UserID");
-
-                    b.Property<double>("Weight");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SWWeaponsCustom");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using RPGPlaza.Models;
+using RPGPlaza.Models.SavageWorlds;
+using static RPGPlaza.Models.SavageWorlds.SWSupport;
 
 namespace RPGPlaza.Models
 {
