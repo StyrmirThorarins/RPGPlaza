@@ -22,5 +22,23 @@ namespace RPGPlaza.Data
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
         }
+
+        public DbSet<SWCharacter> SWCharacters { get; set; }
+        public DbSet<SWSkill> SWSkills { get; set; }
+        public DbSet<SWHindrance> SWHindrances { get; set; }
+        public DbSet<SWEdge> SWEdges { get; set; }
+        public DbSet<SWEdgeType> SWEdgeTypes { get; set; }
+        public DbSet<SWWeapon> SWWeapons { get; set; }
+        public DbSet<SWArmor> SWArmors { get; set; }
+        public DbSet<SWMundaneItem> SWMundaneItems { get; set; }
+        public DbSet<SWBook> SWBooks { get; set; }
+        public DbSet<SWRace> SWRaces { get; set; }
+        public DbSet<SWSkillCustom> SWSkillCustom { get; set; }
+        public DbSet<SWHindranceCustom> SWHindrancesCustom { get; set; }
+        public DbSet<SWEdgeCustom> SWEdgesCustom { get; set; }
+        public DbSet<SWWeaponCustom> SWWeaponsCustom { get; set; }
+        public DbSet<SWArmorCustom> SWArmorsCustom { get; set; }
+        public DbSet<SWMundaneItemCustom> SWMundaneItemsCustom { get; set; }
+        public DbSet<SWRaceCustom> SWRacesCustom { get; set; }
     }
 }
