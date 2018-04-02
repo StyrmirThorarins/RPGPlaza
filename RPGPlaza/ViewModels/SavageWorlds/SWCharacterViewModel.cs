@@ -8,7 +8,7 @@ using static RPGPlaza.Models.SavageWorlds.SWSupport;
 
 namespace RPGPlaza.Models
 {
-    public class SWCharacterVM
+    public class SWCharacterViewModel
     {
         SWCharacter Character = new SWCharacter();
 
@@ -59,7 +59,7 @@ namespace RPGPlaza.Models
         }
         public List<SWMundaneItemChar> MundaneItems { get; set; }
 
-        public SWCharacterVM()
+        public SWCharacterViewModel()
         {
             AdvancesNovice = new List<object>(3);
             AdvancesSeasoned = new List<object>(4);

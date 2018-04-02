@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 using RPGPlaza.Models.SavageWorlds;
 using static RPGPlaza.Models.SavageWorlds.SWSupport;
 
-namespace RPGPlaza.Models
+namespace RPGPlaza.Models.SavageWorlds
 {
 
     public class SWCharacter
@@ -63,24 +63,24 @@ namespace RPGPlaza.Models
 
         }
 
-        public SWCharacterVM SeedViewModel()
+        public SWCharacterViewModel SeedViewModel()
         {
-            SWCharacterVM model = new SWCharacterVM();
+            SWCharacterViewModel model = new SWCharacterViewModel();
             ReadJSON(model);
 
             return model;
         }
 
-        public void SaveViewModel(SWCharacterVM model)
+        public void SaveViewModel(SWCharacterViewModel model)
         {
             WriteJSON(model);
             // save model to database, called here via controller
         }
 
         // reads from Json Strings and puts into the SWCharacterVM variables
-        private void ReadJSON(SWCharacterVM model)
+        private void ReadJSON(SWCharacterViewModel model)
         {
-            model.Skills = JsonConvert.DeserializeObject<List<SWCharacterVM.SWSkillChar>>(SkillsJson);
+            model.Skills = JsonConvert.DeserializeObject<List<SWCharacterViewModel.SWSkillChar>>(SkillsJson);
             model.Hindrances = JsonConvert.DeserializeObject<List<SWHindrance>>(HindrancesJson);
             model.Edges = JsonConvert.DeserializeObject<List<SWEdge>>(EdgesJson);
             // run these to test, if works add the advances
@@ -88,7 +88,7 @@ namespace RPGPlaza.Models
         }
 
         // reads from the class variables and creates Json data in strings to save to database
-        private void WriteJSON(SWCharacterVM model)
+        private void WriteJSON(SWCharacterViewModel model)
         {
             SkillsJson = JsonConvert.SerializeObject(model.Skills);
             HindrancesJson = JsonConvert.SerializeObject(model.Hindrances);

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace RPGPlaza.Models.SavageWorlds
 {
-    // Book class
+    /// <summary>
+    /// This class encapsulates Savage Worlds books.
+    /// </summary>    
     public class SWBook
     {       
         [Key]
